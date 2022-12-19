@@ -1,0 +1,162 @@
+.navbar-dark .navbar-brand, .navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-nav .nav-link {
+  color: rgb(86,80,80);
+}
+
+.navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show > .nav-link {
+  color: rgb(58,58,58);
+}
+
+
+body {
+  font-family: Montserrat, sans-serif;
+}
+
+
+
+.navbar-dark .navbar-brand, .navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-nav .nav-link {
+  font-weight: 500;
+}
+
+#logo {
+  letter-spacing: 5px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+#navbarNav {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.navbar.navbar-dark.navbar-expand-lg.fixed-top.bg-white.portfolio-navbar {
+  box-shadow: 0 1px 3px rgba(0,0,0,.1);
+}
+
+.portfolio-block .heading h2 {
+  letter-spacing: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.portfolio-block p{
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.portfolio-block.projects-cards h6 {
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.navbar-dark .navbar-toggler {
+  color: #222222;
+  opacity: 0.3;
+}
+
+.portfolio-block.projects-with-sidebar a {
+  font-size: 10px;
+}
+
+.portfolio-block.block-intro p {
+  font-size: 11px;
+}
+
+.btn.btn-outline-primary {
+  background-color: #ffffff;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled).active, .btn-outline-primary:not(:disabled):not(.disabled):active, .show > .btn-outline-primary.dropdown-toggle {
+  background-color: #ffffff;
+  border-color: #000;
+  color: rgb(28,28,28);
+}
+
+.btn.btn-primary.border-dark {
+  font-size: 14px;
+}
+
+.portfolio-block.cv .group .organization {
+  background-color: rgb(164,164,164);
+}
+
+.portfolio-block.cv .education.group .organization {
+  background-color: rgb(171,171,171);
+  color: rgb(52,52,52);
+}
+
+.portfolio-block.cv .education h3, .portfolio-block.cv .work-experience h3 {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.portfolio-block.cv h2 {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 15px;
+}
+
+.portfolio-info-card.skills h3 {
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: rgb(98,98,98);
+}
+
+.portfolio-block.project .meta .tags .meta-heading {
+  color: rgb(95,91,88);
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+#photogallery {
+}
+
+.portfolio-block.project h3 {
+  font-weight: 500;
+  font-size: 15px;
+}
+
+#position {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.progress-bar {
+  background-color: #555;
+}
+
+#copyright {
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.portfolio-block.project .more-projects h3 {
+  font-weight: 500;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.page-footer .links, .page-footer a {
+  color: #555;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+#exp {
+  letter-spacing: 5px;
+  font-size: 14px;
+}
+
+.text-center {
+  letter-spacing: 5px;
+}
+
+.filtr-controls {
+}
+
+.navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
+  color: grey;
+}
