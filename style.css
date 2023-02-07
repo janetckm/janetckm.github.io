@@ -1,52 +1,56 @@
 /*@import url(https://fonts.googleapis.com/css?family=Khula:700);
 */
-*{
-margin:0px;
-padding:0px;
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+h6 {
+  font-size: 10px;
 }
 
 body {
-	background-color: #ECEAED;
-	background-image:url(../assets/wp.png);
-  }
+  background-color: #eceaed;
+  background-image: url(../assets/wp.png);
+}
 
 a {
-    color: #f2f2f2;
-		text-decoration: none;
-		opacity: 0.9;
-		font-size: 12px;
+  color: #f2f2f2;
+  text-decoration: none;
+  opacity: 0.9;
+  font-size: 12px;
 }
 
 a:visited {
-    color: #f2f2f2;
-		text-decoration: none;
+  color: #f2f2f2;
+  text-decoration: none;
 }
 
 .hidden {
-  opacity:0;
+  opacity: 0;
 }
 .console-container {
-	/*font-family: "Courier New", monospace, "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-	font-size: 2em;
-	text-align: center;
-	height: 200px;
-	width: 50%;
-	display: block;
-	position: absolute;
-	color: white;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
+  /*font-family: "Courier New", monospace, "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-size: 2em;
+  text-align: center;
+  height: 200px;
+  width: 50%;
+  display: block;
+  position: absolute;
+  color: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .console-underscore {
-	display: inline-block;
-	position: relative;
-	top: -0.05em;
-	left: 10px;
-	color: #F6FD9B;
+  display: inline-block;
+  position: relative;
+  top: -0.05em;
+  left: 10px;
+  color: #f6fd9b;
 }
 
 .hover-underline-animation {
@@ -56,7 +60,7 @@ a:visited {
 }
 
 .hover-underline-animation:after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   transform: scaleX(0);
@@ -74,49 +78,49 @@ a:visited {
 }
 
 .main {
-	/*position:fixed;
+  /*position:fixed;
 	vertical-align: middle;
 	width: 80%;*/
-	margin: 1%;
-	}
+  margin: 1%;
+}
 
-centered{
-	margin-left: auto;
-	margin-right: auto;
-	}
+centered {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 h1 {
-	font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
-	color: #5C6373;
-	margin-top: 5%;
-	margin-bottom: 5%;
-	font-size: 70%;
-	letter-spacing: 8px;
-	font-weight: lighter;
-	}
+  font-family: "Helvetica Neue Light", Helvetica, Arial, sans-serif;
+  color: #5c6373;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-size: 70%;
+  letter-spacing: 8px;
+  font-weight: lighter;
+}
 
-header{
-	text-align: center;
-	}
+header {
+  text-align: center;
+}
 
 .footer {
-	font: small Verdana, Arial, Helvetica, sans-serif;
-	font-size: 9px;
-	color: rgba(136,136,136,0.80);
-	text-align: center;
-	margin-top: 5%;
-	margin-bottom: 5%;
-	bottom: -1em;
-	position: absolute;
-	z-index: 1;
-	float: right;
-	right: 2%;
-	}
+  font: small Verdana, Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  color: rgba(136, 136, 136, 0.8);
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  bottom: -1em;
+  position: absolute;
+  z-index: 1;
+  float: right;
+  right: 2%;
+}
 
-.clearBoth{
-	clear: both;
-	}
+.clearBoth {
+  clear: both;
+}
 
-#wave{
-	width: 100%;
-	}
+#wave {
+  width: 100%;
+}
