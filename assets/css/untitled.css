@@ -11,6 +11,19 @@ body {
   font-family: Montserrat, sans-serif;
 }
 
+.btn-light-grey {
+  background-color: #d3d3d3; /* Light grey color */
+  color: #000; /* Text color */
+  border: 1px solid #ccc; /* Optional: border color */
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.btn-light-grey:hover {
+  background-color: #c0c0c0; /* Slightly darker grey on hover */
+  color: #000; /* Text color on hover */
+}
+
 
 
 .navbar-dark .navbar-brand, .navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-nav .nav-link {
