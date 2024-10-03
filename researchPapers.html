@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPDB</title>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+DE+Grund:wght@100..400&display=swap" rel="stylesheet">
+   <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            font-family: "Playwrite DE Grund", cursive;
+        }
+        #sidebar {
+            width: 200px;
+            background-color: #f1f1f1;
+            height: 100vh;
+            padding: 20px;
+        }
+        #main-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .paper {
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 10px;
+            display: flex;
+        }
+        .paper img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+        .paper-info {
+            flex-grow: 1;
+        }
+        #login-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #categories li {
+            cursor: pointer;
+            padding: 5px;
+        }
+        #categories li:hover {
+            background-color: #ddd;
+        }
+        #categories li.active {
+            background-color: #3a7adb;
+            color: white;
+        }
+
+        h1{
+            font-weight:100;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <div id="login-container">
+            <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        </div>
+        <h3>Categories</h3>
+        <ul id="categories">
+            <!-- Categories will be dynamically added here -->
+        </ul>
+    </div>
+    <div id="main-content">
+        <h1>Research Papers DB References</h1>
+        <div id="papers">
+            <!-- Papers will be dynamically added here -->
+        </div>
+    </div>
+
+    <script>
+        // Sample data (replace with actual data from your backend)
+        const categories = ['All', 'Computer Science', 'Biology', 'Physics', 'Chemistry'];
+        const papers = [
+            { title: 'Machine Learning Advances', abstract: 'This paper discusses recent developments in ML...', thumbnail: 'https://via.placeholder.com/100x100.png?text=ML', category: 'Computer Science' },
+            { title: 'Quantum Computing', abstract: 'An overview of quantum computing principles...', thumbnail: 'https://via.placeholder.com/100x100.png?text=QC', category: 'Physics' },
+            { title: 'Gene Editing', abstract: 'Exploring CRISPR-Cas9 and its applications...', thumbnail: 'https://via.placeholder.com/100x100.png?text=Bio', category: 'Biology' },
+            { title: 'New Chemical Compounds', abstract: 'Synthesis of novel organic compounds...', thumbnail: 'https://via.placeholder.com/100x100.png?text=Chem', category: 'Chemistry' },
+        ];
+
+        function onSignIn(googleUser) {
+            const profile = googleUser.getBasicProfile();
+            console.log('Logged in as: ' + profile.getName());
+            // You can use profile.getId() or profile.getEmail() to identify the user
+            // and fetch their personalized data from your backend
+        }
+
+        function displayCategories() {
+            const categoriesList = document.getElementById('categories');
+            categories.forEach(category => {
+                const li = document.createElement('li');
+                li.textContent = category;
+                li.onclick = () => filterPapers(category);
+                categoriesList.appendChild(li);
+            });
+        }
+
+        function displayPapers(papersToShow = papers) {
+            const papersContainer = document.getElementById('papers');
+            papersContainer.innerHTML = ''; // Clear existing papers
+            papersToShow.forEach(paper => {
+                const paperDiv = document.createElement('div');
+                paperDiv.className = 'paper';
+                paperDiv.innerHTML = `
+                    <img src="${paper.thumbnail}" alt="${paper.title} thumbnail">
+                    <div class="paper-info">
+                        <h2>${paper.title}</h2>
+                        <p>${paper.abstract}</p>
+                        <p><strong>Category:</strong> ${paper.category}</p>
+                    </div>
+                `;
+                papersContainer.appendChild(paperDiv);
+            });
+        }
+
+        function filterPapers(category) {
+            // Update active category in sidebar
+            const categoryItems = document.querySelectorAll('#categories li');
+            categoryItems.forEach(item => {
+                if (item.textContent === category) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+
+            // Filter papers
+            let filteredPapers;
+            if (category === 'All') {
+                filteredPapers = papers;
+            } else {
+                filteredPapers = papers.filter(paper => paper.category === category);
+            }
+
+            // Display filtered papers
+            displayPapers(filteredPapers);
+        }
+
+        // Initialize the app
+        displayCategories();
+        displayPapers();
+    </script>
+</body>
+</html>
