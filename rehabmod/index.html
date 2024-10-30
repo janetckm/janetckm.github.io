@@ -1,45 +1,109 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Janet Choi - Under Construction</title>
-  <link rel="stylesheet" href="./style.css">
-
-  <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
-
-  <script src="p5/libraries/p5.js" type="text/javascript"></script>
-    <script src="p5/libraries/p5.dom.js" type="text/javascript"></script>
-    <script src="p5/libraries/p5.sound.js" type="text/javascript"></script>
-    <script src="p5/wave.js" type="text/javascript"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenRehab Wearables Wiki</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-<!-- partial:index.partial.html -->
-<LINK REL="SHORTCUT ICON" HREF="favicon.ico">
+    <div id="particles-js"></div>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">OpenRehab Wiki</div>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#docs">Documentation</a>
+                <a href="#downloads">Downloads</a>
+                <a href="#community">Community</a>
+            </nav>
+            <div class="controls">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="language-selector">
+                    <select id="language">
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                        <option value="zh">中文</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
 
+    <main class="container">
+        <section class="hero">
+            <h1>OpenRehab Wearables</h1>
+            <p>Open-source rehabilitation wearables for everyone</p>
+        </section>
 
-<div class="main">
-<header>
-	<div class ="centered clearBoth">
-    <h1 class="myname">JANET CHOI</h1>
-    </div>
-</header>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search documentation...">
+        </div>
 
-<div class='console-container'><span id='text'></span><div class='console-underscore' id='console'>&#95;</div>
-<br>
-<br>
-<h1><a class="hover-underline-animation" href="index.html"> > ENTER < </a></h1>
-</div>
+        <div class="documentation">
+            <aside class="sidebar">
+                <ul class="sidebar-nav">
+                    <li><a href="#getting-started">Getting Started</a></li>
+                    <li><a href="#installation">Installation</a></li>
+                    <li><a href="#hardware">Hardware Setup</a></li>
+                    <li><a href="#software">Software Setup</a></li>
+                    <li><a href="#api">API Documentation</a></li>
+                    <li><a href="#contribute">How to Contribute</a></li>
+                    <li><a href="#community">Community</a></li>
+                </ul>
+            </aside>
 
+            <div class="content">
+                <div class="card" data-aos="fade-up">
+                    <h2>Getting Started</h2>
+                    <p>Welcome to the OpenRehab Wearables project. This open-source initiative aims to make rehabilitation technology accessible and advocate STEAM education.</p>
+                </div>
 
+                <div class="card" data-aos="fade-up">
+                    <h2>Downloads</h2>
+                    <div class="download-section">
+                        <div class="download-card">
+                            <h3>Firmware v2.1.0</h3>
+                            <p>Latest stable release with improved sensor calibration</p>
+                            <a href="#" class="download-btn">Download</a>
+                        </div>
+                        <div class="download-card">
+                            <h3>Software SDK</h3>
+                            <p>Development kit with examples and documentation</p>
+                            <a href="#" class="download-btn">Download</a>
+                        </div>
+                        <div class="download-card">
+                            <h3>Schematics</h3>
+                            <p>Hardware designs and PCB layouts</p>
+                            <a href="#" class="download-btn">Download</a>
+                        </div>
+                    </div>
+                </div>
 
-<div class="footer">© 2021 JanetChoi</div>
+                <div class="card" data-aos="fade-up">
+                    <h2>Hardware Setup</h2>
+                    <div class="diagram" id="hardware-diagram"></div>
+                    <p>Detailed instructions for assembling the wearable device and connecting sensors.</p>
+                </div>
+            </div>
+        </div>
+    </main>
 
-</div>
-<script src="https://use.typekit.net/rmy7vlp.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023-24 OpenRehab Wearables. All rights reserved.</p>
+        </div>
+    </footer>
+
 </body>
-</html>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.js'></script><script  src="./script.js"></script>
+<script src="script.js"></script>
 
-</body>
 </html>
