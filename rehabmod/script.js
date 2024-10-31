@@ -2,6 +2,8 @@
 // Initialize AOS
 AOS.init();
 
+document.querySelector('video').volume = 0.1;
+
 // Theme Toggle
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
