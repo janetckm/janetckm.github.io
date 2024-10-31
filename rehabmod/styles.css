@@ -20,6 +20,22 @@
     transition: all 0.3s ease;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.section-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: var(--bg-light);
