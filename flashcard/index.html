@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table to Slides Flashcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        #inputSection {
+            margin-bottom: 20px;
+        }
+        
+        #tableInput {
+            width: 100%;
+            height: 150px;
+            margin-bottom: 10px;
+        }
+        
+        #slideSection {
+            display: none;
+            text-align: center;
+        }
+        
+        .slide {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 10px;
+            padding: 40px;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .slide h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .slide p {
+            font-size: 1.5em;
+            color: #666;
+        }
+        
+        .controls {
+            margin-top: 20px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-size: 1em;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .progress {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .slide-type {
+            font-size: 0.8em;
+            color: #888;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div id="inputSection">
+        <h2>Enter Table Data</h2>
+        <p>Enter data in CSV format (title,content on each line):</p>
+        <textarea id="tableInput" placeholder="Title,Content
+Example Title,Example Content
+Another Title,More Content"></textarea>
+        <button onclick="createSlides()">Create Flashcards</button>
+    </div>
+    
+    <div id="slideSection">
+        <div class="slide">
+            <div class="slide-type" id="slideType"></div>
+            <h2 id="slideTitle"></h2>
+            <p id="slideContent"></p>
+        </div>
+        <div class="controls">
+            <button onclick="previousSlide()">Previous</button>
+            <button onclick="nextSlide()">Next</button>
+            <button onclick="resetApp()">New Flashcards</button>
+        </div>
+        <div class="progress" id="progressText"></div>
+    </div>
+
+    <script>
+        let originalSlides = [];
+        let processedSlides = [];
+        let currentSlide = 0;
+
+        function createSlides() {
+            const input = document.getElementById('tableInput').value;
+            originalSlides = input.split('\n')
+                .map(line => line.trim())
+                .filter(line => line.length > 0)
+                .map(line => {
+                    const [title, content] = line.split(',').map(item => item.trim());
+                    return { title, content };
+                });
+
+            // Create question and answer slides
+            processedSlides = [];
+            originalSlides.forEach(slide => {
+                // Question slide shows the title
+                processedSlides.push({
+                    type: 'QUESTION',
+                    title: slide.title,
+                    content: ''
+                });
+                // Answer slide shows only the content
+                processedSlides.push({
+                    type: 'ANSWER',
+                    title: '',
+                    content: slide.content
+                });
+            });
+
+            if (processedSlides.length > 0) {
+                document.getElementById('inputSection').style.display = 'none';
+                document.getElementById('slideSection').style.display = 'block';
+                showSlide(0);
+            }
+        }
+
+        function showSlide(index) {
+            if (processedSlides.length === 0) return;
+            
+            const slide = processedSlides[index];
+            document.getElementById('slideType').textContent = slide.type;
+            document.getElementById('slideTitle').textContent = slide.title;
+            document.getElementById('slideContent').textContent = slide.content;
+            
+            const currentPair = Math.floor(index / 2) + 1;
+            const totalPairs = originalSlides.length;
+            document.getElementById('progressText').textContent = 
+                `Flashcard ${currentPair} of ${totalPairs} (${slide.type})`;
+        }
+
+        function nextSlide() {
+            if (currentSlide < processedSlides.length - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function previousSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        function resetApp() {
+            document.getElementById('inputSection').style.display = 'block';
+            document.getElementById('slideSection').style.display = 'none';
+            document.getElementById('tableInput').value = '';
+            originalSlides = [];
+            processedSlides = [];
+            currentSlide = 0;
+        }
+    </script>
+</body>
+</html>
