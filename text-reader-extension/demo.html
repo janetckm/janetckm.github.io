@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Reader Extension Demo</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .demo-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        .highlight-instructions {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .test-text {
+            background: white;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .feature-list {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        .feature-list li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔊 Text Reader Extension Demo</h1>
+    
+    <div class="highlight-instructions">
+        <h3>How to Test:</h3>
+        <ol>
+            <li>Install the Text Reader extension (see README.md)</li>
+            <li>Highlight any text on this page</li>
+            <li>Click the extension icon in your browser toolbar</li>
+            <li>Click "Read Highlighted Text" to hear it spoken</li>
+        </ol>
+    </div>
+
+    <div class="demo-section">
+        <h2>Sample Text for Testing</h2>
+        <div class="test-text">
+            <p>This is a sample paragraph that you can highlight and test with the Text Reader extension. The extension uses the Web Speech API to convert text to speech, making it easy to listen to any content on web pages.</p>
+            
+            <p>You can adjust the voice settings including speed, pitch, and volume through the extension's popup interface. The extension works with both regular web pages and PDF files opened in the browser.</p>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Features</h2>
+        <div class="feature-list">
+            <ul>
+                <li><strong>Text-to-Speech:</strong> Read any highlighted text on web pages</li>
+                <li><strong>PDF Support:</strong> Works with PDF files opened in the browser</li>
+                <li><strong>Voice Selection:</strong> Choose from available system voices</li>
+                <li><strong>Speed Control:</strong> Adjust reading speed from 0.5x to 2.0x</li>
+                <li><strong>Pitch Control:</strong> Modify voice pitch for better clarity</li>
+                <li><strong>Volume Control:</strong> Set volume level as needed</li>
+                <li><strong>Cross-Platform:</strong> Works on Windows, macOS, and Linux</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Technical Information</h2>
+        <div class="test-text">
+            <p>The Text Reader extension is built using modern web technologies:</p>
+            <ul>
+                <li><strong>Manifest V3:</strong> Latest Chrome extension manifest format</li>
+                <li><strong>Web Speech API:</strong> Native browser text-to-speech capabilities</li>
+                <li><strong>Content Scripts:</strong> Detect text selection on web pages</li>
+                <li><strong>Service Workers:</strong> Background processing and lifecycle management</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Accessibility Features</h2>
+        <div class="test-text">
+            <p>This extension is designed with accessibility in mind:</p>
+            <ul>
+                <li>Keyboard navigation support</li>
+                <li>Screen reader compatibility</li>
+                <li>High contrast mode support</li>
+                <li>Reduced motion preferences respected</li>
+                <li>Clear visual feedback for all interactions</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Long Text Sample</h2>
+        <div class="test-text">
+            <p>This is a longer text sample to test how the extension handles substantial amounts of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+        </div>
+    </div>
+
+    <div class="highlight-instructions">
+        <h3>Testing Tips:</h3>
+        <ul>
+            <li>Try highlighting different amounts of text - from single words to entire paragraphs</li>
+            <li>Test with different types of content (headings, lists, paragraphs)</li>
+            <li>Experiment with different voice settings in the extension popup</li>
+            <li>Try the extension on other websites and PDF files</li>
+        </ul>
+    </div>
+
+    <footer style="text-align: center; margin-top: 40px; color: #666;">
+        <p>Text Reader Extension Demo - Highlight any text above to test the functionality</p>
+    </footer>
+</body>
+</html>

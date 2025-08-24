@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Generator for Text Reader Extension</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .icon-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .icon-item {
+            text-align: center;
+        }
+        canvas {
+            border: 1px solid #ccc;
+            margin: 10px;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background: #5a6fd8;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔊 Text Reader Extension Icon Generator</h1>
+    
+    <p>This tool generates simple icons for the Text Reader extension. Click the buttons below to generate and download the icons.</p>
+    
+    <div>
+        <button onclick="generateAllIcons()">Generate All Icons</button>
+        <button onclick="downloadAllIcons()">Download All Icons</button>
+    </div>
+    
+    <div class="icon-container" id="iconContainer">
+        <!-- Icons will be generated here -->
+    </div>
+
+    <script>
+        function createIcon(size) {
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            const ctx = canvas.getContext('2d');
+            
+            // Background
+            ctx.fillStyle = '#667eea';
+            ctx.fillRect(0, 0, size, size);
+            
+            // Speaker icon
+            const speakerWidth = size * 0.4;
+            const speakerHeight = size * 0.6;
+            const speakerX = size * 0.3;
+            const speakerY = size * 0.2;
+            
+            // Speaker body
+            ctx.fillStyle = 'white';
+            ctx.fillRect(speakerX, speakerY, speakerWidth * 0.3, speakerHeight);
+            
+            // Speaker cone
+            ctx.beginPath();
+            ctx.moveTo(speakerX + speakerWidth * 0.3, speakerY);
+            ctx.lineTo(speakerX + speakerWidth, speakerY + speakerHeight * 0.2);
+            ctx.lineTo(speakerX + speakerWidth, speakerY + speakerHeight * 0.8);
+            ctx.lineTo(speakerX + speakerWidth * 0.3, speakerY + speakerHeight);
+            ctx.closePath();
+            ctx.fill();
+            
+            // Sound waves
+            ctx.strokeStyle = 'white';
+            ctx.lineWidth = size * 0.02;
+            ctx.beginPath();
+            ctx.arc(speakerX + speakerWidth * 0.65, speakerY + speakerHeight * 0.5, size * 0.15, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.arc(speakerX + speakerWidth * 0.65, speakerY + speakerHeight * 0.5, size * 0.25, 0, Math.PI * 2);
+            ctx.stroke();
+            
+            // Text "TR"
+            ctx.fillStyle = 'white';
+            ctx.font = `bold ${size * 0.15}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.fillText('TR', size * 0.5, size * 0.85);
+            
+            return canvas;
+        }
+        
+        function generateAllIcons() {
+            const container = document.getElementById('iconContainer');
+            container.innerHTML = '';
+            
+            const sizes = [16, 32, 48, 128];
+            
+            sizes.forEach(size => {
+                const canvas = createIcon(size);
+                const div = document.createElement('div');
+                div.className = 'icon-item';
+                
+                const label = document.createElement('p');
+                label.textContent = `${size}x${size}`;
+                
+                div.appendChild(canvas);
+                div.appendChild(label);
+                container.appendChild(div);
+                
+                // Store canvas for download
+                canvas.dataset.size = size;
+            });
+        }
+        
+        function downloadAllIcons() {
+            const canvases = document.querySelectorAll('canvas');
+            
+            canvases.forEach(canvas => {
+                const size = canvas.dataset.size;
+                const link = document.createElement('a');
+                link.download = `icon${size}.png`;
+                link.href = canvas.toDataURL();
+                link.click();
+            });
+        }
+        
+        // Generate icons on page load
+        window.onload = generateAllIcons;
+    </script>
+</body>
+</html>

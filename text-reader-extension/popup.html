@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Reader</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                <span class="icon">🔊</span>
+                Text Reader
+            </h1>
+            <p class="subtitle">Highlight text and read it aloud</p>
+        </header>
+
+        <main class="main">
+            <div class="status-section">
+                <div class="status-indicator" id="statusIndicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text" id="statusText">Ready</span>
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <div class="control-group">
+                    <label for="voiceSelect" class="control-label">Voice:</label>
+                    <select id="voiceSelect" class="control-select">
+                        <option value="">Loading voices...</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label for="rateSlider" class="control-label">Speed: <span id="rateValue">1.0</span>x</label>
+                    <input type="range" id="rateSlider" class="control-slider" min="0.5" max="2.0" step="0.1" value="1.0">
+                </div>
+
+                <div class="control-group">
+                    <label for="pitchSlider" class="control-label">Pitch: <span id="pitchValue">1.0</span></label>
+                    <input type="range" id="pitchSlider" class="control-slider" min="0.5" max="2.0" step="0.1" value="1.0">
+                </div>
+
+                <div class="control-group">
+                    <label for="volumeSlider" class="control-label">Volume: <span id="volumeValue">100</span>%</label>
+                    <input type="range" id="volumeSlider" class="control-slider" min="0" max="100" step="10" value="100">
+                </div>
+            </div>
+
+            <div class="action-section">
+                <button id="readButton" class="btn btn-primary" disabled>
+                    <span class="btn-icon">▶️</span>
+                    Read Highlighted Text
+                </button>
+                <button id="stopButton" class="btn btn-secondary" disabled>
+                    <span class="btn-icon">⏹️</span>
+                    Stop Reading
+                </button>
+            </div>
+
+            <div class="info-section">
+                <div class="info-card">
+                    <h3 class="info-title">How to use:</h3>
+                    <ol class="info-list">
+                        <li>Highlight any text on the page</li>
+                        <li>Click "Read Highlighted Text"</li>
+                        <li>Adjust voice settings as needed</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="text-preview">
+                <label for="previewText" class="control-label">Preview:</label>
+                <div id="previewText" class="preview-content">
+                    No text highlighted
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <button id="settingsButton" class="btn btn-text">
+                <span class="btn-icon">⚙️</span>
+                Settings
+            </button>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

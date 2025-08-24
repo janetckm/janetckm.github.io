@@ -1,0 +1,5 @@
+/* Content script styles */
+.text-reader-highlight {
+    background-color: rgba(102, 126, 234, 0.2);
+    border-radius: 2px;
+}
